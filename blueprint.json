@@ -5,6 +5,13 @@
         "parameters": {
             "storageAccountType": {
                 "type": "string",
+                "defaultValue": "Standard_LRS",
+                "allowedValues": [
+                    "Standard_LRS",
+                    "Standard_GRS",
+                    "Standard_ZRS",
+                    "Premium_LRS"
+                ],
                 "metadata": {
                     "displayName": "storage account type.",
                     "description": null
@@ -27,13 +34,15 @@
             "contributors": {
                 "type": "array",
                 "metadata": {
-                    "description": "List of AAD object IDs that is assigned Contributor role at the subscription"
+                    "description": "List of AAD object IDs that is assigned Contributor role at the subscription",
+                    "strongType": "PrincipalId"
                 }
             },
             "owners": {
                 "type": "array",
                 "metadata": {
-                    "description": "List of AAD object IDs that is assigned Owner role at the resource group"
+                    "description": "List of AAD object IDs that is assigned Owner role at the resource group",
+                    "strongType": "PrincipalId"
                 }
             }
         },
